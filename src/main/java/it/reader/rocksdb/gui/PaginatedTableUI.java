@@ -27,8 +27,8 @@ public class PaginatedTableUI extends JPanel {
 
         data = new ArrayList<>(keyValueMap.entrySet());
         model = new DefaultTableModel();
-        model.addColumn("Chiave");
-        model.addColumn("Valore");
+        model.addColumn("Key");
+        model.addColumn("Value");
 
         table = new JTable(model);
         table.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -81,7 +81,7 @@ public class PaginatedTableUI extends JPanel {
                currentPage = 0;
                 updateTable();
             } catch (NumberFormatException ex) {
-                JOptionPane.showMessageDialog(this, "Ricerca del valore non riuscita");
+                JOptionPane.showMessageDialog(this, "Research did not succeed.");
             }
         });
 
@@ -103,7 +103,7 @@ public class PaginatedTableUI extends JPanel {
                 currentPage = 0;
                 updateTable(); 
             } catch (NumberFormatException ex) {
-                JOptionPane.showMessageDialog(this, "Inserire un numero valido per la dimensione della pagina.");
+                JOptionPane.showMessageDialog(this, "Insert a valid number (integer).");
             }
         });
 
@@ -112,7 +112,7 @@ public class PaginatedTableUI extends JPanel {
                 String valueToSearch = searchValueInput.getText();
                 updateTable(valueToSearch); 
             } catch (NumberFormatException ex) {
-                JOptionPane.showMessageDialog(this, "Ricerca del valore non riuscita");
+                JOptionPane.showMessageDialog(this, "Key search did not succeed.");
             }
         });
 
